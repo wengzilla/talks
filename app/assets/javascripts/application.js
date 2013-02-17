@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require_tree .
 //= require speakerdeck
 //= require youtube
+//= require sync
