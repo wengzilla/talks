@@ -1,0 +1,16 @@
+Form for talk:
+
+<%= form_for @talk do |talk_form| %>
+  <%= talk_form.label :title %>
+  <%= talk_form.text_field :title %>
+
+  <%= talk_form.fields_for :presentation do |presentation_fields| %>
+    Speaker Deck URL: <%= presentation_fields.text_field :url %>
+  <% end %>
+
+  <%= talk_form.fields_for :video do |video_fields| %>
+    YouTube URL: <%= video_fields.text_field :url %>
+  <% end %>
+
+  <%= talk_form.submit :value => "Add"%>
+<% end %>
