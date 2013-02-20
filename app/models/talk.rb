@@ -13,4 +13,13 @@ class Talk < ActiveRecord::Base
       talk.build_presentation
     end
   end
+
+  def transitions_json
+    # Converts string of 1@0:02, 2@0:04, 3@ 0:06, 4@0:10, 5@1:00 to array of hashes
+    pairs = self.transitions.split(",")
+    pairs.map do |pair|
+      slide, time = pair.split("@")
+      { :slide => slide.to_i, :time => ChronicDuration::parse(time) }
+    end.to_json
+  end
 end

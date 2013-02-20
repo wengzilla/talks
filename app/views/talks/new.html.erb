@@ -12,5 +12,9 @@ Form for talk:
     YouTube URL: <%= video_fields.text_field :url %>
   <% end %>
 
+  <br />
+  Transitions
+  <%= talk_form.text_area :transitions %>
+
   <%= talk_form.submit :value => "Add"%>
 <% end %>

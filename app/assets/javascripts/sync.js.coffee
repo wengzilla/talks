@@ -14,8 +14,7 @@ class @Sync
 
   _transitionOnTime: (time) =>
     transition = @_findTransitionByTime(time)
-    console.log(transition.slide)
-    $(window).trigger("goToSlide", transition.slide)
+    if transition? then $(window).trigger("goToSlide", transition.slide)
 
   _findTransitionByTime: (time) =>
     slides = _.filter(@transitions, (transition, idx) =>
@@ -26,4 +25,5 @@ class @Sync
   _findTransitionBySlide: (slide) ->
     slides = 1
 
-sync = new Sync([{'time': 0, 'slide': 1}, {'time': 5, 'slide': 37}, {'time': 10, 'slide': 30}])
+$ ->
+  sync = new Sync($("#presentation_info").data("transitions"))

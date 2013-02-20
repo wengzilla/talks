@@ -2,4 +2,6 @@
   <% @talks.each do |talk| %>
     <li><%= link_to talk.title, talk_path(talk) %></li>
   <% end %>
+
+  <%= link_to "Add a new talk", new_talk_path %>
 </ul>
