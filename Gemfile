@@ -15,7 +15,6 @@ group :production do
 end
 
 group :development do
-  gem 'debugger'
 end
 
 # Gems used only for assets and not required
@@ -23,7 +22,6 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -39,3 +37,4 @@ gem 'httparty'
 gem 'mechanize'
 gem 'awesome_print'
 gem 'chronic_duration'
+gem 'bootstrap-sass', '~> 2.3.1.0'

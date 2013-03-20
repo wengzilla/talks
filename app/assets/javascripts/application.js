@@ -17,3 +17,4 @@
 //= require speakerdeck
 //= require youtube
 //= require sync
+//= require bootstrap
