@@ -1,6 +1,9 @@
 Talks::Application.routes.draw do
+  devise_for :users
+
   resources :talks
 
+  match 'contact' => 'pages#contact'
   root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"

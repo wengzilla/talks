@@ -1,0 +1,10 @@
+<% unless flash.nil? %>
+  <% flash.each do |type, message| %>
+    <div class="container boxed">
+      <div class="alert alert-<%= type %>">
+        <a class="corner-close" onclick="$(this).closest('div.alert').hide(); return false;" href="#" style="float: right">hide</a>
+        <%= message %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

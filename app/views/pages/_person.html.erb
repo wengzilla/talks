@@ -1,0 +1,17 @@
+<li class='span3'>
+  <figure class='thumbnail-figure'>
+    <img alt='<%= person[:name] %>' src='<%= asset_path(person[:profile_photo_url]) %>' class='img-polaroid'>
+      <figcaption class='thumbnail-title'>
+        <h3>
+          <span><%= person[:name].upcase %></span>
+        </h3>
+      </figcaption>
+    </img>
+  </figure>
+  <p>
+    <%= person[:bio] %>
+  </p>
+  <p>
+    <a href="http://twitter.com/<%= person[:twitter_handle] %>"><i class="icon-twitter"></i>@<%= person[:twitter_handle] %></a>
+  </p>
+</li>

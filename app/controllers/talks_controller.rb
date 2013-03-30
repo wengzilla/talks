@@ -11,6 +11,7 @@ class TalksController < ApplicationController
 
   def new
     @talk = Talk.initialize_with_nested_models
+    redirect_to talks_path
   end
 
   def create

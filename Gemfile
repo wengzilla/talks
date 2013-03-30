@@ -30,11 +30,10 @@ end
 
 gem 'jquery-rails'
 gem 'awesome_print'
-gem 'carrierwave'
-gem 'fog', '~> 1.3.1'
-gem 'nokogiri'
-gem 'httparty'
-gem 'mechanize'
-gem 'awesome_print'
-gem 'chronic_duration'
+
+#authentication
+gem 'devise'
+
+# styling
 gem 'bootstrap-sass', '~> 2.3.1.0'
+gem "font-awesome-rails"
