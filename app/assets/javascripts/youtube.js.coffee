@@ -35,10 +35,12 @@ class @YouTube
       console.log("CUED")
 
   window.onYouTubeIframeAPIReady = =>
+    console.log("HI")
+    console.log $('#video_info').data('url')
     player = new YT.Player('ytplayer', {
       height: '295',
       width: '480',
-      videoId: 'u1zgFlCw8Aw',
+      videoId: $('#video_info').data('id'),
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
@@ -52,4 +54,5 @@ class @YouTube
   onPlayerStateChange = (e) =>
     $(window).trigger("videoStateChange", e)
 
-window.yt = new YouTube()
+$ ->
+  window.yt = new YouTube()

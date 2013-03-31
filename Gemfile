@@ -37,3 +37,12 @@ gem 'devise'
 # styling
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem "font-awesome-rails"
+
+# getting presentation from speakerdeck
+gem 'httparty'
+
+# getting transition times
+gem 'chronic_duration'
+
+# getting youtube video data
+gem 'youtube_it'

@@ -4,6 +4,7 @@ class CreateTableTalks < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.text   :transitions
+      t.integer :user_id
       t.timestamps
     end
 
@@ -20,8 +21,14 @@ class CreateTableTalks < ActiveRecord::Migration
 
     create_table :videos do |t|
       t.integer :talk_id
-      t.string :url
-      t.text :data
+      t.string  :external_source
+      t.string  :external_id
+      t.string  :external_author
+      t.string  :title
+      t.string  :image
+      t.text    :data
+      t.integer :duration
+      t.string  :url
       t.timestamps
     end
   end

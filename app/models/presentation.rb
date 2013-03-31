@@ -1,12 +1,10 @@
 class Presentation < ActiveRecord::Base
-  include HTTParty
-
   attr_accessible :talk, :title, :url, :token, :author_name, :author_url, :data
+  include HTTParty
 
   SPEAKERDECK_OEMBED_ENDPOINT = "https://speakerdeck.com/oembed.json?url="
 
   belongs_to :talk
-
   before_save :get_info
 
   def get_info

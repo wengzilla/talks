@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130330155718) do
     t.string   "title"
     t.string   "description"
     t.text     "transitions"
+    t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -54,10 +55,16 @@ ActiveRecord::Schema.define(:version => 20130330155718) do
 
   create_table "videos", :force => true do |t|
     t.integer  "talk_id"
-    t.string   "url"
+    t.string   "external_source"
+    t.string   "external_id"
+    t.string   "external_author"
+    t.string   "title"
+    t.string   "image"
     t.text     "data"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "duration"
+    t.string   "url"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
