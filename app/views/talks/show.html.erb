@@ -1,14 +1,20 @@
-<div style="width: 1100px; margin: 0 auto; padding-bottom: 30px; overflow: auto;">
-  <div id="presentation_wrapper" style="width: 550px; float: left; margin-right: 50px;">
-    <div id="presentation_info" data-transitions="<%= @talk.transitions_json %>"></div>
-    <div id="video_info" data-id="<%= @talk.video.external_id %>"></div>
+<div style="margin: 0 auto; padding-bottom: 30px; overflow: auto;">
+  <div id="presentation_wrapper" class="left-col" style="width: 650px; float: left; margin-right: 40px;">
     <script async class="speakerdeck-embed" data-id="<%= @talk.presentation.token %>" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js" ></script>
   </div>
-  <div id="ytplayer">
+  <div class="right-col">
+    <div id="ytplayer">
+    </div>
+    <div class="presentation-description" style="background: #aaa; width: 400px; float: left;">
+      <%= image_tag "ed_square.jpg" %>
+      <%= @talk.user.username %>
+      <div id="presentation_info" data-transitions="<%= @talk.transitions_json %>"></div>
+      <div id="video_info" data-id="<%= @talk.video.external_id %>"></div>
+    </div>
   </div>
 </div>
 
-<div id="disqus_wrapper" style="width: 1100px; margin: 0 auto;">
+<div id="disqus_wrapper" style="margin: 0 auto;">
   <div id="disqus_thread"></div>
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

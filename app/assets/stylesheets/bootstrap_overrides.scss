@@ -7,8 +7,8 @@ html {
 }
 body {
   position: relative;
-  background: #DDDCE2 url(../img/body_bg.jpg) repeat left top;
   -webkit-font-smoothing: antialiased;
+  background-image: url(gray_sand.png);
   font-family: 'Lato', sans-serif !important;
 }
 @media (max-width: 979px) {

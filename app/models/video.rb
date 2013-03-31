@@ -2,12 +2,10 @@ class Video < ActiveRecord::Base
   attr_accessible :talk, :url, :duration
 
   belongs_to :talk
-  before_save :set_youtube_attributes
+  before_save :get_info
 
-  def set_youtube_attributes
-    youtube_response = YoutubeParser.search(url).first
-    youtube_response.each do |key, value|
-      self.send("#{key.to_sym}=", value)
-    end
+  def get_info
+    info_hash = YoutubeParser.search(url).first
+    info_hash.each{ |k, v| self.send("#{k}=".to_sym, v) }
   end
 end

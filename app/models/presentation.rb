@@ -16,6 +16,10 @@ class Presentation < ActiveRecord::Base
     end
   end
 
+  def thumbnail
+    "https://speakerd.s3.amazonaws.com/presentations/#{token}/slide_0.jpg"
+  end
+
   def hash_from_speakerdeck_response(info)
     {
       :author_name => info["author_name"],
@@ -26,3 +30,6 @@ class Presentation < ActiveRecord::Base
     }
   end
 end
+
+#preview slide 640x480 - presentations/hash_here/preview_slide_1.jpg
+#slide 1024x768 - presentations/hash_here/slide_1.jpg

@@ -2,6 +2,7 @@ Talks::Application.routes.draw do
   devise_for :users
 
   resources :talks
+  resources :users, :only => [:show, :edit]
 
   match 'contact' => 'pages#contact'
   root :to => 'pages#index'

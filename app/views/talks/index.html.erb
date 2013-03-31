@@ -1,7 +1,5 @@
-<ul>
-  <% @talks.each do |talk| %>
-    <li><%= link_to talk.title, talk_path(talk) %></li>
-  <% end %>
+<%= link_to "Add a new talk", new_talk_path, :class => "btn btn-primary" %>
 
-  <%= link_to "Add a new talk", new_talk_path %>
-</ul>
+<div class="row" style="margin-top:20px;">
+  <%= render :partial => "shared/talk_thumbnail", :collection => @talks, :as => "talk" %>
+</div>
