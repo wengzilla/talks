@@ -8,6 +8,7 @@
     <div class="presentation-description" style="background: #aaa; width: 400px; float: left;">
       <%= image_tag "ed_square.jpg" %>
       <%= @talk.user.username %>
+
       <div id="presentation_info" data-transitions="<%= @talk.transitions_json %>"></div>
       <div id="video_info" data-id="<%= @talk.video.external_id %>"></div>
     </div>

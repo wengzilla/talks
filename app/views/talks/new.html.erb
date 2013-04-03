@@ -1,20 +1,40 @@
-Form for talk:
-
-<%= form_for @talk do |talk_form| %>
-  <%= talk_form.label :title %>
-  <%= talk_form.text_field :title %>
-
+<h1>Add a New Talk</h1>
+<hr />
+<%= form_for @talk, :html => {:class => "form form-horizontal"} do |talk_form| %>
+  <div class="control-group">
+    <%= talk_form.label :title, :class => "control-label" %>
+    <div class="controls">
+      <%= talk_form.text_field :title %>
+    </div>
+  </div>
   <%= talk_form.fields_for :presentation do |presentation_fields| %>
-    Speaker Deck URL: <%= presentation_fields.text_field :url %>
+    <div class="control-group">
+      <%= presentation_fields.label :url, "Speaker Deck URL", :class => "control-label" %>
+      <div class="controls">
+        <%= presentation_fields.text_field :url %>
+      </div>
+    </div>
   <% end %>
 
   <%= talk_form.fields_for :video do |video_fields| %>
-    YouTube URL: <%= video_fields.text_field :url %>
+    <div class="control-group">
+      <%= video_fields.label :url, "YouTube URL", :class => "control-label" %>
+      <div class="controls">
+        <%= video_fields.text_field :url %>
+      </div>
+    </div>
   <% end %>
 
-  <br />
-  Transitions
-  <%= talk_form.text_area :transitions, :placeholder => "1@0:02, 2@0:04, 3@ 0:06, 4@0:10, 5@1:00" %>
+  <div class="control-group">
+    <%= talk_form.label :transitions, :class => "control-label" %>
+    <div class="controls">
+      <%= talk_form.text_area :transitions, :placeholder => "1@0:02, 2@0:04, 3@ 0:06, 4@0:10, 5@1:00", :size => "50x6" %>
+    </div>
+  </div>
 
-  <%= talk_form.submit :value => "Add"%>
+  <div class="control-group">
+    <div class="controls">
+      <%= talk_form.submit :value => "Add", :class => "btn btn-success" %>
+    </div>
+  </div>
 <% end %>
