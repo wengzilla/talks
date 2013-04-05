@@ -1,5 +1,33 @@
-<%= link_to "Add a new talk", new_talk_path, :class => "btn btn-primary" %>
-
-<div class="row" style="margin-top:20px;">
-  <%= render :partial => "shared/talk_thumbnail", :collection => @talks, :as => "talk" %>
+<div class="carousel-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div style="padding-top:30px;">
+          <p>Our talks</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="container" style="padding-top: 10px;">
+  <div class="row" style="margin-top:20px;">
+    <%= render :partial => "shared/talk_thumbnail", :collection => @talks, :as => "talk" %>
+  </div>
+
+  <%= link_to "Add a new talk", new_talk_path, :class => "btn btn-primary" %>
+</div>
+
+<style>
+  .carousel-wrapper {
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+    line-height: 60px;
+
+    background-color: #3CBA42;
+    padding-top:50px;
+    margin-left: -100%;
+    margin-right: -100%;
+  }
+</style>

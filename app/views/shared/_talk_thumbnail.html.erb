@@ -1,7 +1,7 @@
 <div class="span4 talk-thumbnail">
-  <%= image_tag talk.presentation.thumbnail %>
+  <a href="<%= talk_path(talk) %>"><%= image_tag talk.presentation.thumbnail %></a>
   <div class="talk-info">
     <p class="talk-title"><%= link_to talk.title, talk_path(talk) %></p>
-    <p class="talk-user"><%= "#{formatted_date(talk.created_at)} by"%> <%= link_to talk.user.username, user_path(talk.user.username) %></p>
+    <p class="talk-user"><%= "#{formatted_date(talk.created_at)} posted by"%> <%= link_to talk.user.username, user_path(talk.user.username) %></p>
   </div>
 </div>

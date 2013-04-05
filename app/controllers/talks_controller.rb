@@ -1,4 +1,6 @@
 class TalksController < ApplicationController
+  before_filter :require_login, :only => [:new, :create, :edit, :update]
+
   protect_from_forgery
 
   def index
@@ -14,7 +16,7 @@ class TalksController < ApplicationController
   end
 
   def create
-    if @talk = Talk.create(params[:talk])
+    if @talk = current_user.create_talk(params[:talk])
       redirect_to talks_path, :success => "Your talk was successfully created!"
     else
       render 'new', :flash => @talk.errors
@@ -22,11 +24,11 @@ class TalksController < ApplicationController
   end
 
   def edit
-    @talk = Talk.find(params[:id])
+    @talk = current_user.talks.find(params[:id])
   end
 
   def update
-    @talk = Talk.find(params[:id])
+    @talk = current_user.talks.find(params[:id])
     @talk.update_attributes(params[:talk])
   end
 end
