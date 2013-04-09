@@ -1,22 +1,58 @@
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.carousel').flexslider();
+  });
+</script>
+
 <div class="carousel-wrapper">
   <div class="container">
     <div class="row">
       <div class="span12">
-        <div style="padding-top:30px;">
-          <p>Our talks</p>
+        <div class="carousel">
+          <ul class="slides">
+            <li>
+              <div style="float:right">
+                <i class="icon-group" style="font-size:300px;"></i>
+              </div>
+              <div style="padding-top:30px;">
+                <p>Coming soon to a conference near you.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<style>
+  .slides li {
+    display:none;
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+    line-height: 60px;
+    height: 350px;
+  }
+
+
+  .footer {
+    margin-top:50px;
+    padding: 25px 0 25px 0;
+    text-align: right;
+    background-color: #1ba1e2;
+    color: white;
+  }
+</style>
+
 <div class="container" style="padding-top: 10px;">
   <div class="row" style="margin-top:20px;">
     <%= render :partial => "shared/talk_thumbnail", :collection => @talks, :as => "talk" %>
   </div>
 
-  <%= link_to "Add a new talk", new_talk_path, :class => "btn btn-primary" %>
+  <!-- <%= link_to "Add a new talk", new_talk_path, :class => "btn btn-primary" %> -->
 </div>
+
 
 <style>
   .carousel-wrapper {
