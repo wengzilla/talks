@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
 private
+  def set_full_width
+    @full_width = true
+  end
+
   def require_login
     unless current_user
       flash[:error] = "You must be logged in to access that page."

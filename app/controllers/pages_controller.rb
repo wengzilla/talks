@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   protect_from_forgery
+  before_filter :set_full_width
 
   def contact
     @people = [

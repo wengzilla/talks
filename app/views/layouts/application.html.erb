@@ -18,7 +18,9 @@
   <%= render :partial => "shared/navbar" %>
   <div class="container">
     <%= render :partial => "shared/flashes" %>
-    <%= yield %>
+    <%= yield unless @full_width %>
   </div>
+
+  <%= yield if @full_width %>
 </body>
 </html>

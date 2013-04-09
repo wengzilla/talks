@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   protect_from_forgery
+  before_filter :set_full_width, :only => [:show]
 
   def show
     user
